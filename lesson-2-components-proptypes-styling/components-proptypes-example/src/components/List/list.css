@@ -1,0 +1,8 @@
+.list {
+    list-style: none;
+}
+
+.list-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
