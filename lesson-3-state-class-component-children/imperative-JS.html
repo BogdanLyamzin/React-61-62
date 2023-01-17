@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-menu-link {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid red;
+            color: red;
+            text-decoration: none;
+        }
+
+        .main-menu-link.active {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="main-menu" id="main-menu"></ul>
+    <script>
+       const menuItems = [
+        {
+            text: "Home page",
+            link: "#",
+        },
+        {
+            text: "Books page",
+            link: "#",
+        },
+        {
+            text: "Contacts page",
+            link: "#",
+        }
+       ];
+
+       const mainMenu = document.getElementById("main-menu");
+       const menuElements = menuItems.map(({text, link}) => `<li><a class="main-menu-link" href="${link}">${text}</a></li>`);
+       mainMenu.insertAdjacentHTML("beforeend", menuElements.join(""));
+
+       mainMenu.addEventListener("click", function(e){
+        e.preventDefault();
+        if(e.target.classList.contains("main-menu-link")) {
+            const prevActiveLink = this.querySelector(".active");
+            if(prevActiveLink) {
+                prevActiveLink.classList.remove("active");
+            }
+            
+            e.target.classList.add("active");
+        }
+       })
+    </script>
+</body>
+</html>
