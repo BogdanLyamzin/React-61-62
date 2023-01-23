@@ -9,7 +9,15 @@ const Wrapper = styled.button`
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     cursor: pointer;
     background-color: ${({active}) => active ? "red" : "#fff"};
-    color:  ${({active}) => active ? "#fff" : "red"}
+    color:  ${({active}) => active ? "#fff" : "red"};
+
+    transition: background-color 5s cubic-bezier();
+
+    &:hover {
+        background-color:${({ type }) =>
+    type === 'submit' ? '#ff0000' : '#0000ff'};
+        color:#ffffff;
+    }
 `
 
 /*
