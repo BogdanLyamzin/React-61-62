@@ -11,7 +11,7 @@ const Wrapper = styled.button`
     background-color: ${({active}) => active ? "red" : "#fff"};
     color:  ${({active}) => active ? "#fff" : "red"};
 
-    transition: background-color 5s cubic-bezier();
+    transition: background-color 5s cubic-bezier(0.1, 0.7, 1, 0.1);
 
     &:hover {
         background-color:${({ type }) =>
