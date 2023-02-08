@@ -1,6 +1,17 @@
 import PropTypes from "prop-types";
 import styled from '@emotion/styled';
 
+const firstRender = useRef(true);
+
+useEffect(()=> {
+    if(firstRender.current) {
+        firstRender.current = false;
+        return;
+    }
+    localStorage.setItem("books", JSON.stringify(books))
+}, [books]);
+
+
 const Wrapper = styled.button`
     display: inline-block;
     padding: 10px 15px;
