@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 import styles from "./posts-search-list.module.scss";
 
-const PostsSearchList = ({ items, showPost }) => {
+const PostsSearchList = ({ items }) => {
 
     const elements = items.map(({ id, title, body }) =>
-        <Link className={styles.link} key={id} to={`/posts/${id}`}><li onClick={() => showPost({ title, body })} className={styles.item}>
+        <Link className={styles.link} key={id} to={`/posts/${id}`}><li className={styles.item}>
             <h4>{title}</h4>
             <p>{body}</p>
         </li></Link>);
