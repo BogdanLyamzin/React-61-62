@@ -8,7 +8,7 @@ const PostsSearchList = ({items, showPost})=> {
                                                                 <h4>{title}</h4>
                                                                 <p>{body}</p>
                                                             </li>);
-    // console.log("render post list")
+
     return (
         <ul className={styles.list}>
             {elements}
