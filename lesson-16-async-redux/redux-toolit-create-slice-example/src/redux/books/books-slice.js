@@ -11,7 +11,7 @@ const initialState = {
 const booksSlice = createSlice({
     name: "books",
     initialState,
-    reducers: {
+    extraReducers: {
         [fetchAllBooksLoading]: (store) => {
             store.loading = true;
         },
